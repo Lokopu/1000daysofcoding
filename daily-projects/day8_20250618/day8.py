@@ -19,6 +19,7 @@ def main():
     
     
     while True:
+        print("Input new roll")
         try:
             # Match input string to regex
             match = re.search(regex, input("")).string
@@ -37,11 +38,14 @@ def main():
         sum = 0
 
         # Roll number of dices
-        for roll in range(dices):
-            sum += roll_dice(sides)
+        for i in range(dices):
+            roll = roll_dice(sides)
+            sum += roll
+            print(roll, end="... ")
         
         # Print final sum
-        print(sum)
+        print(f"Sum:", sum)
+        print()
 
 def roll_dice(sides):
     # return random int based on the number of sides of dice
